@@ -5,6 +5,19 @@
 
 Created with React
 
+1. Fetch 5000 results
+
+2. Create table with at least 3 columns
+
+3. Add pagination
+
+4. Sord ascending and descending
+
+5. Mark selected row
+
+6. Show selected row somewhere 
+
+
 demo: https://zyro.dominic.lt
 
 ## Getting Started
@@ -33,7 +46,7 @@ cd zyro-challenge
 
 Install javascript dependencies
 
-```
+``` 
 npm install
 ```
 
