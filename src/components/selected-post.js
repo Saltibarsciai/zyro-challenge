@@ -1,25 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectedRow = ({post}) => {
+const SelectedPost = ({post}) => {
     const renderPost = () => {
+        if(post !== null){
             return (
-             <table>
-                 <tbody>
-                     <tr>
-                         <td>
-                             {post.id}
-                         </td>
-                         <td>
-                             {post.title}
-                         </td>
-                         <td>
-                             {post.albumId}
-                         </td>
-                     </tr>
-                 </tbody>
-            </table>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            {post.id}
+                        </td>
+                        <td>
+                            {post.title}
+                        </td>
+                        <td>
+                            {post.albumId}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             );
+        }
     };
     return (
         <div className={'page-header'}>
@@ -28,8 +30,8 @@ const SelectedRow = ({post}) => {
     );
 };
 
-SelectedRow.propTypes = {
+SelectedPost.propTypes = {
     post: PropTypes.object
 };
 
-export default SelectedRow;
+export default SelectedPost;
