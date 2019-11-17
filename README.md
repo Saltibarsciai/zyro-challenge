@@ -11,7 +11,7 @@ Created with React
 
 3. Add pagination
 
-4. Sord ascending and descending
+4. Sort ascending and descending
 
 5. Mark selected row
 
