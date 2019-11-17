@@ -11,25 +11,19 @@ const Posts = ({posts, fetchSelected, setSortBy}) => {
         setSortBy(field)
     };
     return (
-        <table>
+        <table className={'w-100 table'}>
             <thead>
-            <tr>
-                <td>
-                    <button onClick={() => sortBy('id')}>
+                <tr>
+                    <th onClick={() => sortBy('id')}>
                         ID
-                    </button>
-                </td>
-                <td>
-                    <button onClick={ () => sortBy('title')}>
+                    </th>
+                    <th onClick={ () => sortBy('title')}>
                         Title
-                    </button>
-                </td>
-                <td>
-                    <button onClick={ () => sortBy('albumId')}>
+                    </th>
+                    <th onClick={ () => sortBy('albumId')}>
                         Album ID
-                    </button>
-                </td>
-            </tr>
+                    </th>
+                </tr>
             </thead>
             <tbody>
                 {posts.map( post => (

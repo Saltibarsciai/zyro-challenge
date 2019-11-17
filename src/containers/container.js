@@ -12,12 +12,12 @@ const Container = () => {
     const [finalPosts, setFinalPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedPost, setSelectedPost] = useState({});
-    const [perPage] = useState(20);
+    const [perPage] = useState(10);
     const [direction, setDirection] = useState('asc');
     const [show, setShow] = useState(0);
 
-    const indexLastPost = currentPage * perPage;
-    const indexFirstPost = indexLastPost - perPage;
+    let indexLastPost = currentPage * perPage;
+    let indexFirstPost = indexLastPost - perPage;
 
     const fetchData = async () => {
         const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
@@ -29,14 +29,18 @@ const Container = () => {
     }, []);
 
     const paginate = (currentIndex) => {
-        let indexLastPost = currentIndex * perPage;
-        let indexFirstPost = indexLastPost - perPage;
-        setCurrentPage(currentIndex);
-        setFinalPosts(allPosts.slice(indexFirstPost, indexLastPost));
+         indexLastPost = currentIndex * perPage;
+         indexFirstPost = indexLastPost - perPage;
+         setCurrentPage(currentIndex);
+         setFinalPosts(allPosts.slice(indexFirstPost, indexLastPost));
     };
     const showAll = () => {
-        setShow(1);
-        setFinalPosts(allPosts);
+        setShow(show === 1 ? 0 : 1);
+        if(!show){
+            setFinalPosts(allPosts);
+        }else {
+            setFinalPosts(allPosts.slice(indexFirstPost, indexLastPost));
+        }
     };
     const sort = (field) => {
         allPosts.sort((a, b) => compare(b[field], a[field], direction));

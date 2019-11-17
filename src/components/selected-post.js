@@ -5,26 +5,26 @@ const SelectedPost = ({post}) => {
     const renderPost = () => {
         if(post !== null){
             return (
-                <table>
+                <table className={'w-100 text-center table fetched'}>
                     <tbody>
-                    <tr>
-                        <td>
-                            {post.id}
-                        </td>
-                        <td>
-                            {post.title}
-                        </td>
-                        <td>
-                            {post.albumId}
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                {post.id}
+                            </td>
+                            <td>
+                                {post.title}
+                            </td>
+                            <td>
+                                {post.albumId}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             );
         }
     };
     return (
-        <div className={'page-header'}>
+        <div>
             {renderPost()}
         </div>
     );

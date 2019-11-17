@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 const BtnShowAll = ({showAll}) => {
     return (
-        <div onClick={() => showAll()}>
-            <a href={'#'}>
-                All post
-            </a>
+        <div className={'btn w-100 mb-3'} onClick={() => showAll()}>
+            All post
         </div>
     );
 };
